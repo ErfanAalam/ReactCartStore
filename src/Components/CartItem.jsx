@@ -10,14 +10,14 @@ const CartItem = () => {
     const { products, handleRemove, handleDecrement, handleIncrement, handleClearCart, totalAmount } = useContext(cartContext)
 
     return (
-        <div className=''>
+        <div className='bg-blue-300'>
             {   products.length == 0 ? <p className='text-center text-5xl mt-10'>"Your Cart is Currently Empty"</p> :
                 <>
-                    <h1 className='text-center text-5xl mt-20'>Cart Items</h1>
+                    <h1 className='text-center text-5xl pt-20'>Cart Items</h1>
                     <div className='p-20'>
                         {
                             products.map((product, index) => {
-                                return <div className='flex gap-40 p-10' key={index}>
+                                return <div className='flex  p-10 border-2 m-2 border-black  justify-around' key={index}>
                                     <img src={product.img} width={"430px"} height={"200px"} alt="hello" />
                                     <div className=' flex flex-col justify-center items-center'>
                                         <h1>{product.title}</h1>
@@ -26,7 +26,7 @@ const CartItem = () => {
                                     </div>
                                     <div className='flex flex-col justify-evenly'>
                                         <button onClick={() => handleIncrement(product)}> <KeyboardArrowUpIcon fontSize='large' /> </button>
-                                        <h1 className='text-center'> {product.amount} </h1>
+                                        <h1 className='text-center text-2xl'> {product.amount} </h1>
                                         <button onClick={() => handleDecrement(product)}> <KeyboardArrowDownIcon fontSize='large' /> </button>
                                     </div>
                                 </div>
